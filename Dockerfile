@@ -3,5 +3,6 @@ MAINTAINER dinglong
 RUN apt-get update
 RUN apt-get install -y libssl-dev libpcre3 libpcre3-dev \
 	ruby ruby-dev python-pip make curl telnet 
+RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install fpm
 RUN pip install aliyuncli aliyun-python-sdk-oss
