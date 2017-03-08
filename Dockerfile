@@ -6,18 +6,18 @@ RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install fpm
 RUN pip install aliyuncli aliyun-python-sdk-oss
 COPY osscmd /usr/bin/
+COPY qshell_linux_amd64 /usr/bin/qshell
 RUN chmod u+x /usr/bin/osscmd
+RUN chmod u+x /usr/bin/qshell
 ADD http://xiaoer-packages.oss-cn-shenzhen.aliyuncs.com/jdk-7u79-linux-x64.tar.gz /usr/local/
 ADD https://www.apache.org/dist/ant/binaries/apache-ant-1.9.7-bin.tar.gz /usr/local/
 ADD http://mirrors.cnnic.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz /usr/local/
-ADD http://devtools.qiniu.io/qiniu-devtools-linux_amd64-v3.0.20150529.tar.gz /usr/local/
 ADD https://nodejs.org/download/release/v0.12.9/node-v0.12.9.tar.gz /usr/local/
 
 RUN tar -xf /usr/local/jdk-7u79-linux-x64.tar.gz && rm /usr/local/jdk-7u79-linux-x64.tar.gz
 RUN tar -xf /usr/local/apache-ant-1.9.7-bin.tar.gz && rm /usr/local/apache-ant-1.9.7-bin.tar.gz
 RUN tar -xf /usr/local/apache-maven-3.3.9-bin.tar.gz && rm /usr/local/apache-maven-3.3.9-bin.tar.gz
 RUN mkdir /usr/local/node-v0.12.9 &&  tar -xf /usr/local/node-v0.12.9.tar.gz -C /usr/local/node-v0.12.9 && rm /usr/local/node-v0.12.9.tar.gz
-RUN tar -xf /usr/local/qiniu-devtools-linux_amd64-v3.0.20150529.tar.gz -C /usr/local/qiniu-v3.0 && rm /usr/local/qiniu-devtools-linux_amd64-v3.0.20150529.tar.gz
 
 ENV ANT_HOME /usr/local/apache-ant-1.9.7
 ENV MVN_HOME /usr/local/apache-maven-3.3.9
