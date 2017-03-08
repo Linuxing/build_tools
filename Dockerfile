@@ -23,5 +23,4 @@ ENV PATH /usr/local/node-v0.12.9/bin:${JAVA_HOME}/bin:${MVN_HOME}/bin:$PATH
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN npm install npm -g
-RUN npm install -g bower
+RUN npm install -g bower grunt-cli webpack gulp
