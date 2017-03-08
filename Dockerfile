@@ -11,15 +11,15 @@ RUN chmod u+x /usr/bin/osscmd
 RUN chmod u+x /usr/bin/qshell
 ADD http://xiaoer-packages.oss-cn-shenzhen.aliyuncs.com/jdk-7u79-linux-x64.tar.gz /usr/local/
 ADD http://mirrors.cnnic.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz /usr/local/
-ADD https://nodejs.org/download/release/v0.12.9/node-v0.12.9.tar.gz /usr/local/
+ADD https://nodejs.org/dist/v6.10.0/node-v6.10.0-linux-x64.tar.xz /usr/local/
 
 RUN tar -xf /usr/local/jdk-7u79-linux-x64.tar.gz && rm /usr/local/jdk-7u79-linux-x64.tar.gz
 RUN tar -xf /usr/local/apache-maven-3.3.9-bin.tar.gz && rm /usr/local/apache-maven-3.3.9-bin.tar.gz
-RUN mkdir /usr/local/node-v0.12.9 &&  tar -xf /usr/local/node-v0.12.9.tar.gz -C /usr/local/node-v0.12.9 && rm /usr/local/node-v0.12.9.tar.gz
+RUN mkdir /usr/local/node-v6.10.0-linux-x64 &&  tar -xf /usr/local/node-v6.10.0-linux-x64.tar.xz -C /usr/local/node-v6.10.0-linux-x64 && rm /usr/local/node-v6.10.0-linux-x64.tar.xz
 
 ENV MVN_HOME /usr/local/apache-maven-3.3.9
 ENV JAVA_HOME /usr/local/jdk1.7.0_79
-ENV PATH /usr/local/node-v0.12.9/bin:${JAVA_HOME}/bin:${MVN_HOME}/bin:$PATH
+ENV PATH /usr/local/node-v6.10.0-linux-x64/bin:${JAVA_HOME}/bin:${MVN_HOME}/bin:$PATH
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
