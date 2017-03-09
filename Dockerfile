@@ -3,11 +3,10 @@ MAINTAINER dinglong
 RUN apt-get update && apt-get install -y libssl-dev libpcre3 libpcre3-dev \
 	ruby ruby-dev python-pip make curl telnet 
 RUN gem install fpm
-RUN pip install aliyuncli aliyun-python-sdk-oss
-COPY osscmd /usr/bin/
+COPY ossutil /usr/bin/ossutil
 COPY qshell_linux_amd64 /usr/bin/qshell
-RUN chmod u+x /usr/bin/osscmd
 RUN chmod u+x /usr/bin/qshell
+RUN chmod u+x /usr/bin/ossutil
 
 ENV JDK jdk-7u79-linux-x64
 ENV MVN apache-maven-3.3.9-bin
