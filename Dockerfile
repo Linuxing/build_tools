@@ -24,10 +24,10 @@ RUN mkdir ${JAVA_HOME} \
     && tar -xf /usr/local/${JDK}.tar.gz -C /usr/local \
     && rm /usr/local/${JDK}.tar.gz
 RUN mkdir ${MVN_HOME} \
-    && tar -xf /usr/local/${MVN}.tar.gz /usr/local \
+    && tar -xf /usr/local/${MVN}.tar.gz -C /usr/local \
     && rm /usr/local/${MVN}.tar.gz
 RUN mkdir ${NODE_HOME} \
-    && tar -xf /usr/local/${NODE}.tar.gz /usr/local \
+    && tar -xf /usr/local/${NODE}.tar.gz -C /usr/local \
     && rm /usr/local/${NODE}.tar.gz
 
 
